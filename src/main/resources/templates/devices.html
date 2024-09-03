@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Devices Data</title>
+</head>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td
+    {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: black;
+        color:White;
+    }
+    body
+    {
+     background-color: darkgrey;
+        font-family: Arial, sans-serif;
+    }
+
+</style>
+<body>
+
+<table>
+    <thead>
+    <tr>
+
+        <th>IMEI</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Range</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="device : ${devices}">
+        <td th:text="${device.imei}"></td>
+        <td th:text="${device.latitude}"></td>
+        <td th:text="${device.longitude}"></td>
+        <td th:text="${device.range_km}"></td>
+    </tr>
+
+
+
+    </tbody>
+</table>
+
+</body>
+</html>
